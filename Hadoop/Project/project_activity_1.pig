@@ -22,7 +22,7 @@ names = FOREACH groupByName GENERATE $0 as name, COUNT($1) as no_of_lines;
 namesOrdered = ORDER names BY no_of_lines DESC;
 
 -- Remove the outputs folder
-rmf hdfs:///user/yogeshwari/outputs;
+rmf hdfs:///user/jaanumouli/outputs;
 
 -- Store result in HDFS
-STORE namesOrdered INTO 'hdfs:///user/yogeshwari/outputs' USING PigStorage('\t');
+STORE namesOrdered INTO 'hdfs:///user/jaanumouli/outputs' USING PigStorage('\t');
